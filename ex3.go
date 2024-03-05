@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-func Ex1() {
-	fmt.Printf("\n==========  Exercise 1:  ==========\n\n")
+func Ex3() {
+	fmt.Printf("\n==========  Exercise 3:  ==========\n\n")
 
 	// TODO
 

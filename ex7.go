@@ -14,9 +14,9 @@ func set_to_map(your_map map[int]int, ch chan int, ctx context.Context, mu *sync
 			mu.Lock()
 			// saving data
 			your_map[data] = data
-			fmt.Printf("Value %v is saved\n", your_map[data])
 			// unlocking map using mutex
 			mu.Unlock()
+			fmt.Printf("Value %v is saved\n", data)
 		case <-ctx.Done():
 			fmt.Printf("Goroutine has finished\n")
 			wg.Done()

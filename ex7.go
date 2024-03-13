@@ -35,7 +35,7 @@ func Ex7() {
 	ch := make(chan int)
 	defer close(ch)
 
-	// creating mutex to ensure data cncurrency will not occur
+	// creating mutex to ensure data race will not occur
 	mu := sync.Mutex{}
 
 	// creating context to stop goroutines

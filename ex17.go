@@ -1,8 +1,34 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
+
+func Ex17() {
+	fmt.Printf("\n==========  Exercise 17:  ==========\n\n")
+
+	// creating a slice with some values
+	slc := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+	// searching for 7 in the slice
+	index := sort.Search(len(slc), func(i int) bool { return slc[i] >= 7 })
+
+	// old manual version
+	//index := binarySearch(slc, 7)
+
+	if index == -1 {
+		fmt.Printf("7 not found\n")
+	} else {
+		fmt.Printf("Index of 7 is %d\n", index)
+	}
+
+	fmt.Printf("\n====================================\n\n")
+}
 
 /*
+Старый код, написал его до того, как прочитал в документации, что sort.Search
+	имплементирует бинарный поиск.
 
 Логика работы алгоритма бинарного поиска (в коде будут отсылаться к этим шагам):
 
@@ -12,7 +38,7 @@ import "fmt"
 4. Если элемент не найден, то уменьшаем интервал поиска
 5. Поиск проходит до того, как интервал не станет состоять из нуля элементов
 
-*/
+
 
 func binarySearch(array []int, x int) int {
 	found := -1
@@ -40,20 +66,4 @@ func binarySearch(array []int, x int) int {
 	}
 	return found
 }
-
-func Ex17() {
-	fmt.Printf("\n==========  Exercise 17:  ==========\n\n")
-
-	// creating a slice with some values
-	slc := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-
-	// searching for 2 in the slice
-	index := binarySearch(slc, 2)
-	if index == -1 {
-		fmt.Printf("2 not found\n")
-	} else {
-		fmt.Printf("Index of 2 is %d\n", index)
-	}
-
-	fmt.Printf("\n====================================\n\n")
-}
+*/

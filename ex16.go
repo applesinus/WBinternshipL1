@@ -1,8 +1,28 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
+
+func Ex16() {
+	fmt.Printf("\n==========  Exercise 16:  ==========\n\n")
+
+	// creating a slice with some values
+	slc := []int{10, 9, 5, 6, 8, 7, 3, 4, 2, 1}
+
+	// old manual version
+	// slc = quickSort(slc, 0, len(slc)-1)
+
+	// sorting the slice
+	sort.Slice(slc, func(i, j int) bool { return slc[j] > slc[i] })
+	fmt.Printf("Sorted array is: %v\n", slc)
+
+	fmt.Printf("\n====================================\n\n")
+}
 
 /*
+Старый код, написал его до того, как прочитал в документации, что sort.Slice имплементирует квиксорт.
 
 Логика работы квиксорта (в коде комменты будут отсылаться к этим шагам):
 
@@ -22,7 +42,7 @@ import "fmt"
 мьютексы, а тогда в этом не будет смысла. Но в тз не было сказано ни про параллельность, ни про
 предпочтения по оптимизации с точки зрения памяти/скорости/производительности.
 
-*/
+
 
 // partition function
 func partition(arr []int, low, high int) ([]int, int) {
@@ -57,16 +77,4 @@ func quickSort(arr []int, low, high int) []int {
 	}
 	return arr
 }
-
-func Ex16() {
-	fmt.Printf("\n==========  Exercise 16:  ==========\n\n")
-
-	// creating a slice with some values
-	slc := []int{10, 9, 5, 6, 8, 7, 3, 4, 2, 1}
-
-	// sorting the slice
-	slc = quickSort(slc, 0, len(slc)-1)
-	fmt.Printf("Sorted array is: %v\n", slc)
-
-	fmt.Printf("\n====================================\n\n")
-}
+*/

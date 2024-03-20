@@ -28,10 +28,8 @@
   func someFunc() {
     v := createHugeString(1 << 10)
     justString = v[:100]
-  }</code>
-</pre>
-<pre>
-<code>func main() {
+  }
+  func main() {
     someFunc()
   }</code>
 </pre>
@@ -79,10 +77,8 @@ Example: -20:{-25.0, -27.0, -21.0}, 10:{13.0, 19.0, 15.5}, 20: {24.5}, etc</li>
   func someFunc() {
     v := createHugeString(1 << 10)
     justString = v[:100]
-  }</code>
-</pre>
-<pre>
-<code>func main() {
+  }
+  func main() {
     someFunc()
   }</code>
 </pre>

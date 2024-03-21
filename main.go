@@ -3,7 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	exercise := "none"
+	var exercise string
+	fmt.Println("Type here an exercise number ('exit or -1' to exit):")
+	fmt.Scan(&exercise)
+
 	for exercise != "exit" && exercise != "-1" {
 		switch exercise {
 		case "1":
@@ -58,6 +61,8 @@ func main() {
 			Ex25()
 		case "26":
 			Ex26()
+		case "exam1":
+			exam1()
 		default:
 			fmt.Println("Invalid exercise number or command")
 		}
